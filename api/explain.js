@@ -1,4 +1,4 @@
-module.exports = async function handler(req, res) {
+module.exports = async (req, res) => {
 
 try {
 
@@ -39,5 +39,4 @@ error: "Server error"
 
 }
 
-}
-}
+};
