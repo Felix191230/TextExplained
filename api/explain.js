@@ -1,5 +1,7 @@
 module.exports = async function handler(req, res) {
 
+console.log("ENV TEST:", process.env);
+
 if (req.method !== "POST") {
 return res.status(200).json({ result: "API running" });
 }
