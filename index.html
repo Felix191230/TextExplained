@@ -1,18 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TextExplained</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TextExplained</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f4f6f8;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+margin:0;
+}
+
+.container{
+background:white;
+padding:30px;
+border-radius:10px;
+width:600px;
+box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+h1{
+text-align:center;
+}
+
+textarea{
+width:100%;
+height:150px;
+margin-top:10px;
+padding:10px;
+font-size:14px;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+margin-top:15px;
+width:100%;
+padding:12px;
+font-size:16px;
+background:#0070f3;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#0059c1;
+}
+
+.result{
+margin-top:20px;
+background:#f1f3f5;
+padding:15px;
+border-radius:5px;
+min-height:50px;
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Welcome to TextExplained</h1>
-<p>This is your MVP web app.</p>
+<div class="container">
 
-<script src="script.js"></script>
+<h1>TextExplained</h1>
+
+<p>Paste a complex text and get a simple explanation.</p>
+
+<textarea id="inputText" placeholder="Paste your text here..."></textarea>
+
+<button onclick="explainText()">Explain</button>
+
+<div class="result" id="result">
+Explanation will appear here.
+</div>
+
+</div>
+
+<script>
+
+function explainText(){
+let text=document.getElementById("inputText").value;
+
+if(text.trim()===""){
+document.getElementById("result").innerText="Please paste some text first.";
+return;
+}
+
+document.getElementById("result").innerText="AI explanation will appear here soon...";
+}
+
+</script>
 
 </body>
 </html>
