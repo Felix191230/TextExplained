@@ -27,14 +27,20 @@ content: text
 
 const data = await response.json();
 
+if (!data.choices) {
+return res.status(200).json({
+result: "API error: " + JSON.stringify(data)
+});
+}
+
 res.status(200).json({
 result: data.choices[0].message.content
 });
 
 } catch (error) {
 
-res.status(500).json({
-error: "Server error"
+res.status(200).json({
+result: "Server error: " + error.message
 });
 
 }
